@@ -1,7 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+const { i18n } = require("./next-i18next.config");
 
-module.exports = nextConfig
+const currentUrl = process.env.BASE_URL;
+
+module.exports = {
+  i18n,
+  reactStrictMode: false,
+
+  env: {
+    HOST: currentUrl,
+  },
+};
