@@ -11,6 +11,13 @@ import "../styles/globals.css";
 // components
 import { NextUIProvider } from "@nextui-org/react";
 import { useEffect } from "react";
+import Layout from "components/layout/Layout";
+
+// icons
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { i18n } = useTranslation();
@@ -22,7 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <NextUIProvider theme={theme}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </NextUIProvider>
   );
 }

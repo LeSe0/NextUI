@@ -5,6 +5,7 @@ export const theme = createTheme({
   theme: {
     colors: {
       primary: "black",
+      secondary: "#16181A",
     },
   },
 });
